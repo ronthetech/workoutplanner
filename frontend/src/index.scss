@@ -1,15 +1,12 @@
-body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 .App {
 }
+/* google font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 
 /* layout */
 $primary1: #ea4c3c;
 $primary2: #f88243;
+$primary3: #fc4959;
 $secondary1: #356fad;
 $secondary2: #45abe4;
 $dark: #141c2c;
@@ -17,12 +14,14 @@ $tertiary1: #393a62;
 $tertiary2: #747399;
 $tertiary3: #9292ae;
 $light: #f1f1fb;
-$dark-grey: #686a75;
-$grey: #848484;
+$grey1: #686a75;
+$grey2: #848484;
 $light-grey: #a4acc4;
 $dark-blue: #0d2464;
-$sea-green: #4c7b74;
-$sea-green-2: #4aa3b5;
+$sea-green1: #4c8d83;
+$sea-green2: #4aa3b5;
+$error: #c41a47;
+$green: #1aac83;
 
 * {
 	margin: 0;
@@ -33,22 +32,23 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: $light-grey;
+	font-family: "Poppins";
 }
 a {
-	color: $primary1;
+	color: $secondary2;
 	text-decoration: none;
 }
 
 header {
-	background-color: $tertiary1;
-}
-header .container {
-	max-width: 1400px;
-	margin: 0 auto;
-	padding: 10px 20px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	background-color: $dark-blue;
+	.container {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 10px 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 }
 
 .pages {
@@ -70,14 +70,48 @@ header .container {
 	margin: 20px auto;
 	padding: 20px;
 	position: relative;
-	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 	h3 {
 		font-size: 1.2em;
 		color: $dark-blue;
 		text-transform: capitalize;
+		margin: 0 0 10px 0;
 	}
 	p {
 		color: $dark-blue;
+		margin: 0;
 	}
+}
+
+label,
+input {
+	display: block;
+}
+input {
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	width: 100%;
+	border: 1px solid $dark;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+form button {
+	background: $dark-blue;
+	border: 0;
+	padding: 10px;
+	color: $light;
+	border-radius: 4px;
+	cursor: pointer;
+	font-family: "Poppins";
+}
+div.error {
+	padding: 10px;
+	background: $light;
+	border: 1px solid $error;
+	color: $error;
+	border-radius: 4px;
+	margin: 20px 0;
 }
 

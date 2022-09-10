@@ -18,7 +18,7 @@ Displays a list of custom created workouts, with details like number of reps, we
 
 MongoDB database is used for storage of the workouts. New workouts can be submitted and the planner will keep record of the date each workout was created.
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

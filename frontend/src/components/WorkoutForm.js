@@ -51,7 +51,7 @@ const WorkoutForm = () => {
 				}}
 				value={title}
 			/>
-			<label htmlFor='workout-load'>Load in (lbs.):</label>
+			<label htmlFor='workout-load'>Load in (lbs):</label>
 			<input
 				type='number'
 				onChange={(e) => {

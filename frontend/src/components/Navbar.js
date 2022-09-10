@@ -5,7 +5,7 @@ function Navbar() {
 		<header>
 			<div className='container'>
 				<Link to='/'>
-					<h1>Ron's Workout Planner</h1>
+					<h1>New Workout Planner</h1>
 				</Link>
 			</div>
 		</header>
