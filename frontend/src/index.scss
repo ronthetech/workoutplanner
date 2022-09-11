@@ -4,9 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 
 /* layout */
-$primary1: #ea4c3c;
+$primary1: rgb(234, 76, 60);
 $primary2: #f88243;
-$primary3: #fc4959;
+$primary3: rgb(232, 53, 48);
 $secondary1: #356fad;
 $secondary2: #45abe4;
 $dark: #141c2c;
@@ -91,6 +91,12 @@ header {
 		border-radius: 4px;
 		color: $light;
 		background: $primary1;
+		transition: all 0.3s linear;
+	}
+	button:hover,
+	button:focus {
+		background: $primary3;
+		color: $light-grey;
 	}
 }
 
@@ -109,7 +115,7 @@ input {
 }
 
 form button {
-	background: $dark-blue1;
+	background: $dark-blue2;
 	border: 0;
 	padding: 10px;
 	color: $light;
@@ -120,7 +126,7 @@ form button {
 }
 form button:hover,
 form button:focus {
-	background: $dark-blue2;
+	background: $dark-blue1;
 	color: $light;
 }
 div.error {
@@ -130,5 +136,11 @@ div.error {
 	color: $error;
 	border-radius: 4px;
 	margin: 20px 0;
+}
+input.error {
+	border: 2px solid $error;
+}
+.login {
+	text-align: center;
 }
 

@@ -14,6 +14,22 @@ const newWorkout = async (req, res) => {
 	// destructuring req body to get the details/fields/props of new workout
 	const { title, load, reps, minutes } = req.body;
 
+	//
+	let emptyFields = [];
+
+	if (!title) {
+		emptyFields.push("title");
+	}
+	if (!load) {
+		emptyFields.push("load");
+	}
+	if (!reps) {
+		emptyFields.push("reps");
+	}
+	if (emptyFields.length > 0) {
+		return res.status(400).json({ error: "Please fill in all required fields", emptyFields });
+	}
+
 	// add new workout to the database
 	try {
 		// we will try to add to db
@@ -35,6 +51,7 @@ const getWorkout = async (req, res) => {
 	if (!mongoose.Types.ObjectId.isValid(id)) {
 		return res.status(404).json({ error: "No such workout" });
 	}
+
 	// find the workout with that id
 	const workout = await Workout.findById(id);
 

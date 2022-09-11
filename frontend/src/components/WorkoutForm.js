@@ -10,6 +10,7 @@ const WorkoutForm = () => {
 	const [reps, setReps] = useState("");
 	const [minutes, setMinutes] = useState("");
 	const [error, setError] = useState(null);
+	const [emptyFields, setEmptyFields] = useState([]);
 
 	// (this) is the workout form
 	const handleSubmit = async (e) => {
@@ -28,13 +29,14 @@ const WorkoutForm = () => {
 		});
 		const json = await response.json();
 
-		//if response is not ok/if we don't receive response.ok
-		// set the error to the json.error
+		//if response is not ok set the error to the json.error
 		if (!response.ok) {
 			setError(json.error);
+			setEmptyFields(json.emptyFields);
 		}
 		// if response is ok, then we were successful so we should clear the form by setting all of the states to blank, and set the error back to null
 		if (response.ok) {
+			setEmptyFields([]);
 			setError(null);
 			setTitle("");
 			setLoad("");
@@ -57,6 +59,7 @@ const WorkoutForm = () => {
 					setTitle(e.target.value);
 				}}
 				value={title}
+				className={emptyFields.includes("title") ? "error" : ""}
 			/>
 			<label htmlFor='workout-load'>Load in (lbs):</label>
 			<input
@@ -65,6 +68,7 @@ const WorkoutForm = () => {
 					setLoad(e.target.value);
 				}}
 				value={load}
+				className={emptyFields.includes("load") ? "error" : ""}
 			/>
 			<label htmlFor='workout-reps'>Number of Reps:</label>
 			<input
@@ -73,6 +77,7 @@ const WorkoutForm = () => {
 					setReps(e.target.value);
 				}}
 				value={reps}
+				className={emptyFields.includes("reps") ? "error" : ""}
 			/>
 			<label htmlFor='workout-minutes'>Length in Minutes:</label>
 			<input
