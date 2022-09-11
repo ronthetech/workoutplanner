@@ -9,6 +9,7 @@ const port = process.env.PORT || 3002;
 const app = express();
 
 // middleware
+// parses incoming requests with JSON payloads and is based on body-parser
 app.use(express.json());
 
 // basic test middleware shows current date as string

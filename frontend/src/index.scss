@@ -17,7 +17,8 @@ $light: #f1f1fb;
 $grey1: #686a75;
 $grey2: #848484;
 $light-grey: #a4acc4;
-$dark-blue: #0d2464;
+$dark-blue1: #0d2464;
+$dark-blue2: #0d24af;
 $sea-green1: #4c8d83;
 $sea-green2: #4aa3b5;
 $error: #c41a47;
@@ -40,7 +41,7 @@ a {
 }
 
 header {
-	background-color: $dark-blue;
+	background-color: $dark-blue1;
 	.container {
 		max-width: 1400px;
 		margin: 0 auto;
@@ -73,12 +74,12 @@ header {
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 	h3 {
 		font-size: 1.2em;
-		color: $dark-blue;
+		color: $dark-blue1;
 		text-transform: capitalize;
 		margin: 0 0 10px 0;
 	}
 	p {
-		color: $dark-blue;
+		color: $dark-blue1;
 		margin: 0;
 	}
 }
@@ -98,13 +99,19 @@ input {
 }
 
 form button {
-	background: $dark-blue;
+	background: $dark-blue1;
 	border: 0;
 	padding: 10px;
 	color: $light;
 	border-radius: 4px;
 	cursor: pointer;
 	font-family: "Poppins";
+	transition: all 0.3s linear;
+}
+form button:hover,
+form button:focus {
+	background: $dark-blue2;
+	color: $light;
 }
 div.error {
 	padding: 10px;

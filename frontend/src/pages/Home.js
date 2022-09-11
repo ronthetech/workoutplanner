@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
 // components
 import WorkoutDetails from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
 
 const Home = () => {
-	const [workouts, setWorkouts] = useState(null);
+	const { workouts, dispatch } = useWorkoutsContext();
+	//const [workouts, setWorkouts] = useState(null);
 
 	useEffect(() => {
 		const fetchWorkouts = async () => {
@@ -15,12 +18,14 @@ const Home = () => {
 
 			// if the response is ok, set the object array as the workouts
 			if (response.ok) {
-				setWorkouts(json);
+				//setWorkouts(json);
+				dispatch({ type: "SET_WORKOUTS", payload: json });
 			}
 		};
 
 		fetchWorkouts();
-	}, []); // fires function when component is rendered, only want it to fire once so we use []
+	}, [dispatch]); // fires function when component is rendered, so every time dispatch changes
+	// when we were using state, we only wanted it to fire once so we used []
 
 	return (
 		<div className='home'>
