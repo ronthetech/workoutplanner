@@ -1,4 +1,4 @@
-# Rons Workout Plan
+# Rons Workout Plan V2
 
 ## This is a workout planner
 
@@ -88,4 +88,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
