@@ -1,5 +1,5 @@
 {
-	"name": "@workoutplanner/backend",
+	"name": "@workoutplannerV2/backend",
 	"version": "1.0.0",
 	"description": "backend for Rons Workout Planner",
 	"main": "server.js",
@@ -20,4 +20,3 @@
 		"nodemon": "^2.0.19"
 	}
 }
-
