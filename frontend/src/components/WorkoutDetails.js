@@ -31,9 +31,13 @@ const WorkoutDetails = ({ workout }) => {
 			<p>
 				<strong>Load (lbs): {workout.load}</strong>
 			</p>
-			<p>
-				<strong>Length (mins): {workout.minutes}</strong>
-			</p>
+			{workout.minutes ? (
+				<p>
+					<strong>Length (mins): {workout.minutes}</strong>
+				</p>
+			) : (
+				<p></p>
+			)}
 			<p>{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</p>
 			<button onClick={handleClick}>Delete</button>
 		</div>
